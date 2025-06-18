@@ -1,0 +1,13 @@
+def solve(arr):
+    seen = set()
+    count = {}
+
+    for num in arr:
+        if num in seen:
+            return num
+        seen.add(num)
+        count[num] = count.get(num, 0) + 1
+
+    for num, c in count.items():
+        if c == 1:
+            return num
